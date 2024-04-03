@@ -1,6 +1,7 @@
 import { Component } from "../core/heropy";
 import TextField from "../components/TextField";
 import Message from "../components/Message";
+import Title from "../components/Title";
 
 export default class Home extends Component {
   // constructor에 넘겨줄 내용이 없어서 생략!
@@ -8,6 +9,6 @@ export default class Home extends Component {
     this.el.innerHTML = `
       <h1>Home Page!</h1>
     `;
-    this.el.append(new TextField().el, new Message().el);
+    this.el.append(new TextField().el, new Message().el, new Title().el);
   }
 }
