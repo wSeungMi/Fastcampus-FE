@@ -6,7 +6,7 @@ html {
   --color-white-20: rgba(255, 255, 255, 0.2);
   --color-white-10: rgba(255, 255, 255, 0.1);
   --color-white-5: rgba(255, 255, 255, 05);
-  --color-white-primary: #fdc000;
+  --color-primary: #fdc000;
   --color-white-hover: #f86a05;
   --color-white-area: #1c212e;
 }
@@ -16,4 +16,29 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: 1.4;
   color: var(--color-white);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.headline {
+  margin-bottom: 40px;
+}
+
+.headline h1 {
+  font-family: "Oswald", snas-serif;
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 40px;
+}
+
+.headline h1 span {
+  color: var(--color-primary);
+}
+
+.headline p {
+  color: var(--color-white-30);
 }
