@@ -1,3 +1,9 @@
+html {
+  --color-black: #0e111b;
+  --color-white: #fff;
+  --color-gray: #999;
+}
+
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
