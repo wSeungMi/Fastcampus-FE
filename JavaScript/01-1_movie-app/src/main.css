@@ -33,7 +33,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   color: var(--color-white);
-  background-color: var(--color-white-area);
+  background-color: var(--color-area);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -157,4 +157,15 @@ body {
 
 .movies .movie .info .title {
   color: var(--color-white);
+}
+
+.view-more {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+.view-more.hide {
+  display: none;
 }
