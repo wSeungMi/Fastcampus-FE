@@ -107,8 +107,83 @@ body {
   }
 }
 
-/* headline */
+/* header */
+header {
+  padding: 20px 40px;
+  background-color: rgba(14, 17, 27, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
 
+header .logo {
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: var(--color-white-50);
+  text-decoration: none;
+}
+
+header .logo span {
+  color: var(--color-primary);
+}
+
+header nav ul {
+  display: flex;
+  gap: 14px;
+}
+
+header nav ul li a {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white-50);
+  text-decoration: none;
+}
+
+header nav ul li a.active {
+  color: var(--color-primary);
+}
+
+header .user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-area);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  margin: auto;
+  transition: 0.3s;
+}
+
+header .user:hover {
+  transform: scale(1.2);
+}
+
+header .user img {
+  width: 100%;
+}
+
+/* footer */
+footer {
+  padding: 40px 40px 60px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--color-white-20);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* headline */
 .headline {
   margin-bottom: 40px;
 }
