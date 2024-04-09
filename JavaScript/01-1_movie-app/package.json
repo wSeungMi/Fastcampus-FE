@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port $PORT",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel": "vercel dev"
   },
   "devDependencies": {
+    "vercel": "^33.7.0",
     "vite": "^5.2.0"
   }
 }
