@@ -1,11 +1,11 @@
 import { Component } from "../../core/heropy";
-import moveStore, { searchMovies } from "../store/movie";
+import movieStore, { searchMovies } from "../store/movie";
 
 export default class Search extends Component {
   render() {
     this.el.classList.add("search");
     this.el.innerHTML = `
-      <input type="text" placeholder="Enter the movie title to search!" />
+      <input type="text" value="${movieStore.state.searchText}" placeholder="Enter the movie title to search!" />
       <button class="btn btn-primary">
         Search!
       </button>
@@ -14,11 +14,11 @@ export default class Search extends Component {
     // input event
     const inputEl = this.el.querySelector("input");
     inputEl.addEventListener("input", () => {
-      moveStore.state.searchText = inputEl.value;
+      movieStore.state.searchText = inputEl.value;
     });
     // input enter
     inputEl.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" && moveStore.state.searchText.trim()) {
+      if (event.key === "Enter" && movieStore.state.searchText.trim()) {
         searchMovies(1);
       }
     });
@@ -26,7 +26,7 @@ export default class Search extends Component {
     // button event
     const btnEl = this.el.querySelector(".btn");
     btnEl.addEventListener("click", () => {
-      if (moveStore.state.searchText.trim()) {
+      if (movieStore.state.searchText.trim()) {
         searchMovies(1);
       }
     });
