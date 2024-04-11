@@ -1,11 +1,60 @@
 import { Store } from "../../core/heropy";
 
-const store = new Store({
+interface SimpleMovie {
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+}
+
+export interface DetailedMovie {
+  Title: string;
+  Year: string;
+  Rated: string;
+  Released: string;
+  Runtime: string;
+  Genre: string;
+  Director: string;
+  Writer: string;
+  Actors: string;
+  Plot: string;
+  Language: string;
+  Country: string;
+  Awards: string;
+  Poster: string;
+  Ratings: {
+    Source: string;
+    Value: string;
+  }[];
+  Metascore: string;
+  imdbRating: string;
+  imdbVotes: string;
+  imdbID: string;
+  Type: string;
+  DVD: string;
+  BoxOffice: string;
+  Production: string;
+  Website: string;
+  Response: string;
+}
+
+interface State {
+  searchText: string;
+  page: number;
+  pageMax: number;
+  movies: SimpleMovie[];
+  movie: DetailedMovie[];
+  loading: boolean;
+  message: string;
+}
+
+const store = new Store<State>({
   searchText: "",
   page: 1,
   pageMax: 1,
   movies: [],
-  movie: {},
+  movie: {} as DetailedMovie,
   loading: false,
   message: "Search for the movie title!",
 });
@@ -13,7 +62,7 @@ const store = new Store({
 export default store;
 
 // data fetch
-export const searchMovies = async (page) => {
+export const searchMovies = async (page: number) => {
   store.state.loading = true;
   store.state.page = page;
   // 만약 첫 페이지를 받아온다면 페이지 & 화면 초기화
@@ -45,7 +94,7 @@ export const searchMovies = async (page) => {
   }
 };
 
-export const getMovieDetails = async (id) => {
+export const getMovieDetails = async (id: string) => {
   try {
     const res = await fetch("/api/movie", {
       method: "POST",
