@@ -44,7 +44,7 @@ interface State {
   page: number;
   pageMax: number;
   movies: SimpleMovie[];
-  movie: DetailedMovie[];
+  movie: DetailedMovie;
   loading: boolean;
   message: string;
 }
